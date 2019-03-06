@@ -1,0 +1,12 @@
+You have been assigned to develop a software catalog of products where each product
+is described by name, type, manufacturer, model, color, and price. Each product also
+has an unique identifier.
+
+Your software should let the user to add or remove products from the catalog, modify
+the stock of each product in the catalog, modify the price of the product in the catalog,
+get the current stock of a product in the catalog, and get the current price of a product
+in the catalog. The software should also let the user to get a list of products from the 
+catalog that match certain attributes of the products. 
+
+Design all the objects, their attributes and methods, and the association among 
+the objects.
