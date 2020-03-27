@@ -1,9 +1,9 @@
-package designpattern.adapter.test;
+package design.pattern.adapter.test;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import designpattern.adapter.Queue;
+import design.pattern.adapter.Queue;
 
 public class QueueTest {
 	

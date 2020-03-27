@@ -1,9 +1,9 @@
-package designpattern.singleton.test;
+package design.pattern.singleton.test;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import designpattern.singleton.Singleton;
+import design.pattern.singleton.Singleton;
 
 public class SingletonTest {
 	

@@ -1,4 +1,4 @@
-package designpattern.adapter;
+package design.pattern.adapter;
 
 public class Queue {
 	

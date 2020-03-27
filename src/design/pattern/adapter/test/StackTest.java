@@ -1,9 +1,9 @@
-package designpattern.adapter.test;
+package design.pattern.adapter.test;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import designpattern.adapter.Stack;
+import design.pattern.adapter.Stack;
 
 public class StackTest {
 	

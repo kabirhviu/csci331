@@ -1,10 +1,10 @@
-package designpattern.adapter.test;
+package design.pattern.adapter.test;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import designpattern.adapter.LinkedList;
-import designpattern.adapter.LinkedList.ListNode;
+import design.pattern.adapter.LinkedList;
+import design.pattern.adapter.LinkedList.ListNode;
 
 public class LinnkListTest {
 	
