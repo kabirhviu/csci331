@@ -1,0 +1,27 @@
+package designpattern.singleton;
+
+public class Singleton {
+	
+	private static Singleton instance = null;
+	
+	private static int count = 0;
+	
+	private Singleton() {}
+	
+	public static Singleton getInstance() {
+		if(instance == null) {
+			instance = new Singleton();
+			++count;
+		}
+		return instance;
+	}
+	
+	public String toString() {
+		return "Singleton.instance";
+	}
+	
+	public static int getCount() {
+		return count;
+	}
+
+}
