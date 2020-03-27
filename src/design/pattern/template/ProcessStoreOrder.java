@@ -3,23 +3,26 @@ package design.pattern.template;
 import java.util.List;
 
 public class ProcessStoreOrder extends AbstractProcessOrder{
+	
+	private static final double TAX = 0.12;
+	private static final double DISCOUNT = 0.05;
 
 	@Override
-	protected double determineUnitPrice(String itemCode) {
+	protected double determineUnitPrice(Item item) {
 		System.out.println("Store scans item code to determine the price");
-		return 100; //Fictional price
+		return item.getPrice(); //Fictional price
 	}
 
 	@Override
-	protected double determineTax(String itemCode) {
+	protected double determineTax(Item item) {
 		System.out.println("Store gets the tax amount when item has been scanned");
-		return 0; //Fictional tax
+		return item.getPrice()*TAX; //Fictional tax
 	}
 
 	@Override
-	protected double determineDiscount(String itemCode) {
+	protected double determineDiscount(Item item) {
 		System.out.println("Store gets the discount amount when item has been scanned");
-		return 0; //Fictional discount
+		return item.getPrice()*DISCOUNT; //Fictional discount
 	}
 
 	@Override

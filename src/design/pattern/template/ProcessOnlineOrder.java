@@ -3,28 +3,31 @@ package design.pattern.template;
 import java.util.List;
 
 public class ProcessOnlineOrder extends AbstractProcessOrder{
+	
+	private static final double TAX = 0.20;
+	private static final double DISCOUNT = 0.0;
 
 	@Override
-	protected double determineUnitPrice(String itemCode) {
-		System.out.println("Online site determines the price from the item code");
-		return 100; //Fictional price
+	protected double determineUnitPrice(Item item) {
+		System.out.println("Online site determines the price from the item");
+		return item.getPrice(); //Fictional price
 	}
 
 	@Override
-	protected double determineTax(String itemCode) {
-		System.out.println("Online site gets the tax amount from the item code.");
-		return 0; //Fictional tax
+	protected double determineTax(Item item) {
+		System.out.println("Online site gets the tax amount from the item.");
+		return item.getPrice()*TAX; //Fictional tax
 	}
 
 	@Override
-	protected double determineDiscount(String itemCode) {
-		System.out.println("Online site gets the discount amount from the item code.");
-		return 0; //Fictional discount
+	protected double determineDiscount(Item item) {
+		System.out.println("Online site gets the discount amount from the item.");
+		return item.getPrice()*DISCOUNT; //Fictional discount
 	}
 
 	@Override
 	protected boolean receivePayment(double amount) {
-		// TODO Auto-generated method stub
+		// TODO Need to work with payment gateway
 		return false;
 	}
 

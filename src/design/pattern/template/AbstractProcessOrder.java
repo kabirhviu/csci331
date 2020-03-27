@@ -4,9 +4,9 @@ import java.util.List;
 
 public abstract class AbstractProcessOrder {
 
-	protected abstract double determineUnitPrice(String itemCode);
-	protected abstract double determineTax(String itemCode);
-	protected abstract double determineDiscount(String itemCode);
+	protected abstract double determineUnitPrice(Item item);
+	protected abstract double determineTax(Item item);
+	protected abstract double determineDiscount(Item item);
 	protected abstract boolean receivePayment(double amount);
 	protected abstract void deliver(List<Item> cartItems);
 	
@@ -16,10 +16,13 @@ public abstract class AbstractProcessOrder {
 	public final void process(List<Item> cartItems) {
 		double total =0.0;
 		for(Item item:cartItems) {
-			total += determineUnitPrice(item.getCode());
-			total += determineDiscount(item.getCode());
-			total += determineTax(item.getCode());
+			total += determineUnitPrice(item);
+			total += determineDiscount(item);
+			total += determineTax(item);
 		}
+		
+		System.out.println("Please, pay order total: " + total);
+		
 		if(receivePayment(total)) {
 			deliver(cartItems);
 		}
