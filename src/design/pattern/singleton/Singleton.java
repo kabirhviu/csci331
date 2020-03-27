@@ -17,7 +17,7 @@ public class Singleton {
 	}
 	
 	public String toString() {
-		return "Singleton.instance";
+		return "Singleton.instance: " + count;
 	}
 	
 	public static int getCount() {
