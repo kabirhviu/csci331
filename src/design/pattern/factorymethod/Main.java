@@ -17,13 +17,13 @@ public class Main {
 		ICreditCard creditCard = CreditCardFactory.createCreditCard(CardType.VISA, cardNumber, cardHolderName, expiryDate, cardLimit);
 		System.out.println("Credit Limit of "+ creditCard.cardProvider() + ":" +
 							creditCard.getCardNumber() + " is "+
-							CreditCheck.creditLimit(creditCard));
+							CreditChecker.creditLimit(creditCard));
 		cardNumber ="444-444-444-444";
 		cardLimit = 4000.0;
 		creditCard = CreditCardFactory.createCreditCard(CardType.MASTER, cardNumber, cardHolderName, expiryDate, cardLimit);
 		System.out.println("Credit Limit of "+ creditCard.cardProvider() + ":" +
 							creditCard.getCardNumber() + " is "+
-							CreditCheck.creditLimit(creditCard));
+							CreditChecker.creditLimit(creditCard));
 		
 	}
 
