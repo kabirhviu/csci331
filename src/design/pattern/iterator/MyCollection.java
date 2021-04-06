@@ -10,9 +10,9 @@ public class MyCollection {
 	
 	private static int DEFAULT_CAPACITY = 100;
 	
-	private int[] array;
 	private int capacity;
 	private int size;
+	private int[] array;
 	private int modCount;
 	private int iterCount;
 	
