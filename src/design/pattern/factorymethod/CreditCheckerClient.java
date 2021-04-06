@@ -5,7 +5,7 @@ import java.util.Date;
 
 import design.pattern.factorymethod.CreditCardFactory.CardType;
 
-public class Main {
+public class CreditCheckerClient {
 	
 	public static void main(String[] args) {
 		
