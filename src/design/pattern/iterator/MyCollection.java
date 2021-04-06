@@ -78,7 +78,7 @@ public class MyCollection {
 	
 	public Iterator<Integer> iterator() {
 		iterCount++;
-		return new TinyIterator();
+		return new MyIterator();
 	}
 	
 	
@@ -105,7 +105,7 @@ public class MyCollection {
 	 * @author mhkabir
 	 *
 	 */
-	private class TinyIterator implements Iterator<Integer> {
+	private class MyIterator implements Iterator<Integer> {
 		int curPos = 0;
 		int curModCount = modCount;
 		
