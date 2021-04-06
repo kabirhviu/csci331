@@ -39,7 +39,7 @@ public class CheckerFactoryCanada implements ICheckerFactory {
 	}
 
 	@Override
-	public IBillingCheck createBillingChecker() {
+	public IBillingChecker createBillingChecker() {
 		return new BillingCheckerCanada();
 	}
 

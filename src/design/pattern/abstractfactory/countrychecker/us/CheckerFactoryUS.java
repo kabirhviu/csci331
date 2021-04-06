@@ -34,17 +34,17 @@ public class CheckerFactoryUS implements ICheckerFactory {
 	}
 
 	@Override
-	public ICreditCheck createCreditChecker() {
+	public ICreditChecker createCreditChecker() {
 		return new CreditCheckerUS();
 	}
 
 	@Override
-	public IBillingCheck createBillingChecker() {
+	public IBillingChecker createBillingChecker() {
 		return new BillingCheckerUS();
 	}
 
 	@Override
-	public IShippingCheck createShippingChecker() {
+	public IShippingChecker createShippingChecker() {
 		return new ShippingCheckerUS();
 	}
 
