@@ -12,12 +12,11 @@ public class VisaCreditCard implements ICreditCard {
 	private double cardLimit;
 	private double cardBalance;
 
-	public VisaCreditCard(String cardNumber, String cardHolderName,
-			Date expiryDate, double cardLimit) {
+	public VisaCreditCard(String cardNumber, String cardHolderName) {
 		this.cardNumber = cardNumber;
 		this.cardHolderName = cardHolderName;
-		this.expiryDate = expiryDate;
-		this.setCardLimit(cardLimit);
+		this.expiryDate = null;
+		this.setCardLimit(1000.0);
 		this.setCardBalance(0.0);
 	}
 

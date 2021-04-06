@@ -9,13 +9,12 @@ public class CreditCardFactory {
 		MASTER
 	}
 	
-	public static ICreditCard createCreditCard(CardType type, String cardNumber, String cardHolderName, 
-			Date expriyDate, double cardLimit) {
+	public static ICreditCard createCreditCard(CardType type, String cardNumber, String cardHolderName) {
 		if(type==CardType.MASTER) {
-			return new MasterCreditCard(cardNumber, cardHolderName, expriyDate, cardLimit);
+			return new MasterCreditCard(cardNumber, cardHolderName);
 		}
 		else if(type ==CardType.VISA) {
-			return new VisaCreditCard(cardNumber, cardHolderName, expriyDate, cardLimit);
+			return new VisaCreditCard(cardNumber, cardHolderName);
 		}
 		else {
 			throw new IllegalArgumentException("Wrong card type!");

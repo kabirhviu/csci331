@@ -10,17 +10,16 @@ public class Main {
 	public static void main(String[] args) {
 		
 		String cardNumber ="555-555-555-555";
-		String cardHolderName = "The Card Holder";
-		Date expiryDate = Calendar.getInstance().getTime();
-		double cardLimit = 5000.0;
+		String cardHolderName = "Card Holder 1";
 		
-		ICreditCard creditCard = CreditCardFactory.createCreditCard(CardType.VISA, cardNumber, cardHolderName, expiryDate, cardLimit);
+		ICreditCard creditCard = CreditCardFactory.createCreditCard(CardType.VISA, cardNumber, cardHolderName);
 		System.out.println("Credit Limit of "+ creditCard.cardProvider() + ":" +
 							creditCard.getCardNumber() + " is "+
 							CreditChecker.creditLimit(creditCard));
+		
 		cardNumber ="444-444-444-444";
-		cardLimit = 4000.0;
-		creditCard = CreditCardFactory.createCreditCard(CardType.MASTER, cardNumber, cardHolderName, expiryDate, cardLimit);
+		cardHolderName = "Card Holder 2";
+		creditCard = CreditCardFactory.createCreditCard(CardType.MASTER, cardNumber, cardHolderName);
 		System.out.println("Credit Limit of "+ creditCard.cardProvider() + ":" +
 							creditCard.getCardNumber() + " is "+
 							CreditChecker.creditLimit(creditCard));
