@@ -3,12 +3,12 @@ package design.pattern.abstractfactory;
 import java.util.Calendar;
 import java.util.Date;
 
-import design.pattern.abstractfactory.check.IBillingCheck;
-import design.pattern.abstractfactory.check.ICheckFactory;
-import design.pattern.abstractfactory.check.ICreditCheck;
-import design.pattern.abstractfactory.check.IShippingCheck;
-import design.pattern.abstractfactory.creditcheck.canada.CheckFactoryCanada;
-import design.pattern.abstractfactory.creditcheck.us.CheckFactoryUS;
+import design.pattern.abstractfactory.checker.IBillingChecker;
+import design.pattern.abstractfactory.checker.ICheckerFactory;
+import design.pattern.abstractfactory.checker.ICreditChecker;
+import design.pattern.abstractfactory.checker.IShippingChecker;
+import design.pattern.abstractfactory.countrychecker.canada.CheckerFactoryCanada;
+import design.pattern.abstractfactory.countrychecker.us.CheckerFactoryUS;
 import design.pattern.factorymethod.ICreditCard;
 import design.pattern.factorymethod.CreditCardFactory;
 import design.pattern.factorymethod.CreditCardFactory.CardType;
