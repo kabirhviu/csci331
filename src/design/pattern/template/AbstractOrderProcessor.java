@@ -2,7 +2,7 @@ package design.pattern.template;
 
 import java.util.List;
 
-public abstract class AbstractProcessOrder {
+public abstract class AbstractOrderProcessor {
 
 	protected abstract double determineUnitPrice(Item item);
 	protected abstract double determineTax(Item item);

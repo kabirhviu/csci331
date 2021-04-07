@@ -22,7 +22,7 @@ public class CheckersClient {
 		Date expiryDate = Calendar.getInstance().getTime();
 		double cardLimit = 5000.0;
 		
-		ICreditCard creditCard = CreditCardFactory.createCreditCard(CardType.VISA, cardNumber, cardHolderName, expiryDate, cardLimit);
+		ICreditCard creditCard = CreditCardFactory.createCreditCard(CardType.VISA, cardNumber, cardHolderName);
 		
 		
 		ICheckerFactory checkerFactory;

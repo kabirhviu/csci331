@@ -2,39 +2,39 @@ package design.pattern.template;
 
 import java.util.List;
 
-public class ProcessOnlineOrder extends AbstractProcessOrder{
+public class StoreOrderProcessor extends AbstractOrderProcessor{
 	
-	private static final double TAX = 0.20;
-	private static final double DISCOUNT = 0.0;
+	private static final double TAX = 0.12;
+	private static final double DISCOUNT = 0.05;
 
 	@Override
 	protected double determineUnitPrice(Item item) {
-		System.out.println("Online site determines the price from the item");
+		System.out.println("Store scans item code to determine the price");
 		return item.getPrice(); //Fictional price
 	}
 
 	@Override
 	protected double determineTax(Item item) {
-		System.out.println("Online site gets the tax amount from the item.");
+		System.out.println("Store gets the tax amount when item has been scanned");
 		return item.getPrice()*TAX; //Fictional tax
 	}
 
 	@Override
 	protected double determineDiscount(Item item) {
-		System.out.println("Online site gets the discount amount from the item.");
+		System.out.println("Store gets the discount amount when item has been scanned");
 		return item.getPrice()*DISCOUNT; //Fictional discount
 	}
 
 	@Override
 	protected boolean receivePayment(double amount) {
-		// TODO Need to work with payment gateway
-		return false;
+		// TODO Auto-generated method stub
+		return true;
 	}
 
 	@Override
 	protected void deliver(List<Item> cartItems) {
 		// TODO Auto-generated method stub
-		System.out.println("Items have been shipped to the customer.");
+		System.out.println("Items delivered at the store.");
 		
 	}
 
