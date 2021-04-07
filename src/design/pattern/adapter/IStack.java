@@ -1,6 +1,6 @@
 package design.pattern.adapter;
 
-public interface Stack {
+public interface IStack {
 	
 	public void push(int data);
 	

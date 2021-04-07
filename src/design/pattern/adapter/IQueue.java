@@ -1,6 +1,6 @@
 package design.pattern.adapter;
 
-public interface Queue {
+public interface IQueue {
 	
 	public void enqueue(int data);
 	
