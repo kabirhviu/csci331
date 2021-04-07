@@ -11,7 +11,7 @@ import design.pattern.strategy.ComparatorFactory;
 import design.pattern.strategy.ComparatorFactory.ComparatorType;
 import design.pattern.strategy.RationalNumber;
 import design.pattern.strategy.RationalNumberProcessor;
-import design.pattern.strategy.SortingStrategy;
+import design.pattern.strategy.ISortingStrategy;
 import design.pattern.strategy.SortingStrategyFactory;
 import design.pattern.strategy.SortingStrategyFactory.SortingStrategyType;
 
@@ -91,10 +91,10 @@ public class RationalNumberProcessorTests {
 	@Test
 	public void testSort() {
 		
-		SortingStrategy sortingStrategy = SortingStrategyFactory.createSortingStrategy(SortingStrategyType.BUBBLE);
+		ISortingStrategy sortingStrategy = SortingStrategyFactory.createSortingStrategy(SortingStrategyType.BUBBLE);
 		Comparator<RationalNumber> comparator = ComparatorFactory.createComparator(ComparatorType.ASCENDING);
 		RationalNumberProcessor rationalNumberProcessor = new RationalNumberProcessor();
-		rationalNumberProcessor.setStrategy(sortingStrategy);
+		rationalNumberProcessor.setSortingStrategy(sortingStrategy);
 		List<RationalNumber> testInput = getTestReducedOutput();
 		List<RationalNumber> testOutput = getTestSortedOutput();
 		rationalNumberProcessor.sort(testInput, comparator);
@@ -115,7 +115,7 @@ public class RationalNumberProcessorTests {
 		
 		sortingStrategy = SortingStrategyFactory.createSortingStrategy(SortingStrategyType.QUICK);
 		comparator = ComparatorFactory.createComparator(ComparatorType.ASCENDING);
-		rationalNumberProcessor.setStrategy(sortingStrategy);
+		rationalNumberProcessor.setSortingStrategy(sortingStrategy);
 		testInput = getTestReducedOutput();
 		
 		rationalNumberProcessor.sort(testInput, comparator);
@@ -138,10 +138,10 @@ public class RationalNumberProcessorTests {
 	
 	@Test
 	public void testSortedCopy() {
-		SortingStrategy sortingStrategy = SortingStrategyFactory.createSortingStrategy(SortingStrategyType.BUBBLE);
+		ISortingStrategy sortingStrategy = SortingStrategyFactory.createSortingStrategy(SortingStrategyType.BUBBLE);
 		Comparator<RationalNumber> comparator = ComparatorFactory.createComparator(ComparatorType.ASCENDING);
 		RationalNumberProcessor rationalNumberProcessor = new RationalNumberProcessor();
-		rationalNumberProcessor.setStrategy(sortingStrategy);
+		rationalNumberProcessor.setSortingStrategy(sortingStrategy);
 		List<RationalNumber> testInput = getTestReducedOutput();
 		List<RationalNumber> testOutput = getTestSortedOutput();
 		List<RationalNumber> sortedCopy = rationalNumberProcessor.getSortedCopy(testInput, comparator);
@@ -162,7 +162,7 @@ public class RationalNumberProcessorTests {
 		
 		sortingStrategy = SortingStrategyFactory.createSortingStrategy(SortingStrategyType.QUICK);
 		comparator = ComparatorFactory.createComparator(ComparatorType.ASCENDING);
-		rationalNumberProcessor.setStrategy(sortingStrategy);
+		rationalNumberProcessor.setSortingStrategy(sortingStrategy);
 		testInput = getTestReducedOutput();
 		
 		sortedCopy = rationalNumberProcessor.getSortedCopy(testInput, comparator);

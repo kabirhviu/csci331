@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class QuickSort implements SortingStrategy {
+public class QuickSorting implements ISortingStrategy {
 
 	@Override
 	public void sort(List<RationalNumber> numbers, Comparator<RationalNumber> comparator) {

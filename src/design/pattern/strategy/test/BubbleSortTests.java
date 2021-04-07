@@ -7,7 +7,7 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import design.pattern.strategy.BubbleSort;
+import design.pattern.strategy.BubbleSorting;
 import design.pattern.strategy.ComparatorAscending;
 import design.pattern.strategy.ComparatorDescending;
 import design.pattern.strategy.RationalNumber;
@@ -47,7 +47,7 @@ public class BubbleSortTests {
 		List<RationalNumber> testInput = getTestInput();
 		List<RationalNumber> testOutput = getTestOutput();
 		
-		BubbleSort bubbleSort = new BubbleSort();
+		BubbleSorting bubbleSort = new BubbleSorting();
 		Comparator<RationalNumber> comparator = new ComparatorAscending();
 		bubbleSort.sort(testInput, comparator);
 

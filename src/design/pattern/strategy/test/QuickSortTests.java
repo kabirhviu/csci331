@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import design.pattern.strategy.ComparatorAscending;
 import design.pattern.strategy.ComparatorDescending;
-import design.pattern.strategy.QuickSort;
+import design.pattern.strategy.QuickSorting;
 import design.pattern.strategy.RationalNumber;
 
 public class QuickSortTests {
@@ -47,7 +47,7 @@ public class QuickSortTests {
 		List<RationalNumber> testInput = getTestInput();
 		List<RationalNumber> testOutput = getTestOutput();
 		
-		QuickSort quickSort = new QuickSort();
+		QuickSorting quickSort = new QuickSorting();
 		Comparator<RationalNumber> comparator = new ComparatorAscending();
 		quickSort.sort(testInput, comparator);
 

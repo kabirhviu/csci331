@@ -7,7 +7,7 @@ import java.util.List;
 import design.pattern.strategy.ComparatorFactory.ComparatorType;
 import design.pattern.strategy.SortingStrategyFactory.SortingStrategyType;
 
-public class Main {
+public class RationalNumberProcessorClient {
 	
 	private static List<RationalNumber> getInput() {
 		List<RationalNumber> list = new ArrayList<RationalNumber>();
@@ -59,17 +59,18 @@ public class Main {
 		RationalNumberProcessor rationalNumberProcessor = new RationalNumberProcessor();
 		
 		//Uses factory method design pattern to create desired sorting strategy.
-		SortingStrategy sortingStrategy = SortingStrategyFactory.createSortingStrategy(SortingStrategyType.BUBBLE);
+		ISortingStrategy sortingStrategy = SortingStrategyFactory.createSortingStrategy(SortingStrategyType.BUBBLE);
 		
 		//Uses strategy design pattern to set desired sorting strategy (algorithm).
-		rationalNumberProcessor.setStrategy(sortingStrategy);
+		rationalNumberProcessor.setSortingStrategy(sortingStrategy);
 		
 		//Uses factory method design pattern to create desired comparator.
 		Comparator<RationalNumber> comparator = ComparatorFactory.createComparator(ComparatorType.ASCENDING);
 		
+		rationalNumberProcessor.setComparatorStrategy(comparator);
 				
 		//Uses template method pattern to pass desired comparator.
-		rationalNumberProcessor.sort(input, comparator);
+		rationalNumberProcessor.sort(input);
 		System.out.println("BUBBLE Sorted (ascending) rational numbers:");
 		System.out.println(RationalNumberProcessor.toString(input));
 		
@@ -80,10 +81,10 @@ public class Main {
 		
 		//Uses factory method design pattern to create desired comparator.
 		comparator = ComparatorFactory.createComparator(ComparatorType.DESCENDING);
-		
+		rationalNumberProcessor.setComparatorStrategy(comparator);
 		
 		//Uses template method pattern to pass desired comparator.
-		rationalNumberProcessor.sort(input, comparator);
+		rationalNumberProcessor.sort(input);
 		System.out.println("BUBBLE Sorted (descending) rational numbers:");
 		System.out.println(RationalNumberProcessor.toString(input));
 		
@@ -95,13 +96,13 @@ public class Main {
 		sortingStrategy = SortingStrategyFactory.createSortingStrategy(SortingStrategyType.QUICK);
 		
 		//Uses strategy design pattern to set desired sorting strategy (algorithm).
-		rationalNumberProcessor.setStrategy(sortingStrategy);
+		rationalNumberProcessor.setSortingStrategy(sortingStrategy);
 		
 		//Uses factory method design pattern to create desired comparator.
 		comparator = ComparatorFactory.createComparator(ComparatorType.ASCENDING);
-		
+		rationalNumberProcessor.setComparatorStrategy(comparator);
 		//Uses template method pattern to pass desired comparator.
-		rationalNumberProcessor.sort(input, comparator);
+		rationalNumberProcessor.sort(input);
 		System.out.println("QUICK Sorted (aescending) rational numbers:");
 		System.out.println(RationalNumberProcessor.toString(input));
 			
@@ -111,9 +112,9 @@ public class Main {
 		
 		//Uses factory method design pattern to create desired comparator.
 		comparator = ComparatorFactory.createComparator(ComparatorType.DESCENDING);
-		
+		rationalNumberProcessor.setComparatorStrategy(comparator);
 		//Uses template method pattern to pass desired comparator.
-		rationalNumberProcessor.sort(input, comparator);
+		rationalNumberProcessor.sort(input);
 		System.out.println("QUICK Sorted (descending) rational numbers:");
 		System.out.println(RationalNumberProcessor.toString(input));
 		

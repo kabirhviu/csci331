@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class BubbleSort implements SortingStrategy {
+public class BubbleSorting implements ISortingStrategy {
 
 	@Override
 	public void sort(List<RationalNumber> numbers, Comparator<RationalNumber> comparator) {

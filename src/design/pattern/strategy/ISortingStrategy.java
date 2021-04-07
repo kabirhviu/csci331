@@ -3,7 +3,7 @@ package design.pattern.strategy;
 import java.util.Comparator;
 import java.util.List;
  
-public interface SortingStrategy{
+public interface ISortingStrategy{
 	
 	void sort(List<RationalNumber> numbers, Comparator<RationalNumber> comparator);
 	
