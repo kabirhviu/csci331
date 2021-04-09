@@ -28,7 +28,7 @@ public class WeatherData {
 		setWind(subject.getWind());
 	}
 	
-	public WeatherData(Observable subject) {
+	public WeatherData(Subject subject) {
 		setTemperature(subject.getTemperature());
 		setPrecipitation(subject.getPrecipitation());
 		setHumidity(subject.getHumidity());

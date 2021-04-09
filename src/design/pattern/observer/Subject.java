@@ -1,6 +1,6 @@
 package design.pattern.observer;
 
-public interface Observable {
+public interface Subject {
 	
 	void registerObserver(Observer observer);
 	void removeObserver(Observer observer);

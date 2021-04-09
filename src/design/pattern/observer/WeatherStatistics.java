@@ -6,17 +6,18 @@ import java.util.List;
 public class WeatherStatistics implements Observer {
 	
 	
+	private Subject subject;
 	private List<WeatherData> history;
-	private Observable subject;
 	
-	public WeatherStatistics (Observable subject) {
-		history = new ArrayList<WeatherData>();
+	
+	public WeatherStatistics (Subject subject) {
 		this.subject = subject;
+		history = new ArrayList<WeatherData>();
 		this.subject.registerObserver(this);
 	}
 
 	@Override
-	public void update(Observable subject) {
+	public void update(Subject subject) {
 		if(this.subject == subject) {
 			WeatherData copy = new WeatherData(subject);
 			history.add(copy);
@@ -26,28 +27,28 @@ public class WeatherStatistics implements Observer {
 	}
 	
 	public WeatherData getAverage() {
-		WeatherData stat = new WeatherData();
+		WeatherData statistics = new WeatherData();
 		for(WeatherData wdata: history) {
-			stat.setTemperature(stat.getTemperature() + wdata.getTemperature());
-			stat.setPrecipitation(stat.getPrecipitation() + wdata.getPrecipitation());
-			stat.setHumidity(stat.getHumidity() + wdata.getHumidity());
-			stat.setWind(stat.getWind() + wdata.getWind());
+			statistics.setTemperature(statistics.getTemperature() + wdata.getTemperature());
+			statistics.setPrecipitation(statistics.getPrecipitation() + wdata.getPrecipitation());
+			statistics.setHumidity(statistics.getHumidity() + wdata.getHumidity());
+			statistics.setWind(statistics.getWind() + wdata.getWind());
 		}
 		int historySize = history.size();
-		stat.setTemperature(stat.getTemperature()/historySize);
-		stat.setPrecipitation(stat.getPrecipitation()/historySize);
-		stat.setHumidity(stat.getHumidity()/historySize);
-		stat.setWind(stat.getWind()/historySize);
+		statistics.setTemperature(statistics.getTemperature()/historySize);
+		statistics.setPrecipitation(statistics.getPrecipitation()/historySize);
+		statistics.setHumidity(statistics.getHumidity()/historySize);
+		statistics.setWind(statistics.getWind()/historySize);
 		
-		return stat;
+		return statistics;
 	}
 	
-	public void display(WeatherData subject) {
+	public void display(WeatherData statistics) {
 		System.out.println("\nCurrent Average...........................................\n");
-		System.out.println("\nTemperature: " + subject.getTemperature() +
-				", Precipitation: " + subject.getPrecipitation() +
-				", Humidity: " + subject.getHumidity() + 
-				", Wind: " + subject.getWind() + 
+		System.out.println("\nTemperature: " + statistics.getTemperature() +
+				", Precipitation: " + statistics.getPrecipitation() +
+				", Humidity: " + statistics.getHumidity() + 
+				", Wind: " + statistics.getWind() + 
 				"\n");
 	}
 		
