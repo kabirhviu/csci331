@@ -19,7 +19,7 @@ public class WeatherStatistics implements Observer {
 	@Override
 	public void update(Subject subject) {
 		if(this.subject == subject) {
-			WeatherData copy = new WeatherData(subject);
+			WeatherData copy = new WeatherData(subject.getTemperature(), subject.getPrecipitation(), subject.getHumidity(), subject.getWind());
 			history.add(copy);
 			WeatherData average = getAverage();
 			display(average);

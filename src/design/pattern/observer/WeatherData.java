@@ -21,19 +21,13 @@ public class WeatherData {
 		setWind(wind);
 	}
 	
-	public WeatherData(WeatherData subject) {
-		setTemperature(subject.getTemperature());
-		setPrecipitation(subject.getPrecipitation());
-		setHumidity(subject.getHumidity());
-		setWind(subject.getWind());
+	public WeatherData(WeatherData weatherdata) {
+		setTemperature(weatherdata.getTemperature());
+		setPrecipitation(weatherdata.getPrecipitation());
+		setHumidity(weatherdata.getHumidity());
+		setWind(weatherdata.getWind());
 	}
 	
-	public WeatherData(Subject subject) {
-		setTemperature(subject.getTemperature());
-		setPrecipitation(subject.getPrecipitation());
-		setHumidity(subject.getHumidity());
-		setWind(subject.getWind());
-	}
 
 	public int getTemperature() {
 		return temperature;

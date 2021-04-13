@@ -9,11 +9,6 @@ public class ObservableWeatherData extends WeatherData implements Subject {
 	private List<Observer> observers;
 	private boolean changed;
 	
-	private int temperature;
-	private int precipitation;
-	private int humidity;
-	private int wind;
-	
 	
 	public ObservableWeatherData() {
 		super();
@@ -23,11 +18,7 @@ public class ObservableWeatherData extends WeatherData implements Subject {
 	}
 	
 	public ObservableWeatherData(int temperature, int precipitation, int humidity, int wind) {
-		super.setTemperature(temperature);
-		super.setPrecipitation(precipitation);
-		super.setHumidity(humidity);
-		super.setHumidity(humidity);
-		super.setWind(wind);
+		super(temperature, precipitation, humidity, wind);
 		observers = new ArrayList<Observer>();
 		setChanged(false);	
 	}
@@ -69,7 +60,7 @@ public class ObservableWeatherData extends WeatherData implements Subject {
 	
 	@Override
 	public void setTemperature(int temperature) {
-		if(this.temperature != temperature) {
+		if(getTemperature() != temperature) {
 			super.setTemperature(temperature);
 			setChanged(true);
 			notifyObservers();
@@ -78,7 +69,7 @@ public class ObservableWeatherData extends WeatherData implements Subject {
 	
 	@Override
 	public void setPrecipitation(int precipitation) {
-		if(this.precipitation != precipitation) {
+		if(getPrecipitation() != precipitation) {
 			super.setPrecipitation(precipitation);
 			setChanged(true);
 			notifyObservers();
@@ -87,7 +78,7 @@ public class ObservableWeatherData extends WeatherData implements Subject {
 	
 	@Override
 	public void setHumidity(int humidity) {
-		if(this.humidity != humidity) {
+		if(getHumidity() != humidity) {
 			super.setHumidity(humidity);
 			setChanged(true);
 			notifyObservers();
@@ -96,7 +87,7 @@ public class ObservableWeatherData extends WeatherData implements Subject {
 	
 	@Override
 	public void setWind(int wind) {
-		if(this.wind != wind) {
+		if(getWind() != wind) {
 			super.setWind(wind);
 			setChanged(true);
 			notifyObservers();
@@ -105,19 +96,19 @@ public class ObservableWeatherData extends WeatherData implements Subject {
 	}
 	
 	public void setWeatherData(int temperature, int precipitation, int humidity, int wind) {
-		if(this.temperature != temperature) {
+		if(getTemperature() != temperature) {
 			super.setTemperature(temperature);
 			setChanged(true);
 		}
-		if(this.precipitation != precipitation) {
+		if(getPrecipitation() != precipitation) {
 			super.setPrecipitation(precipitation);
 			setChanged(true);
 		}	
-		if(this.humidity != humidity) {
+		if(getHumidity() != humidity) {
 			super.setHumidity(humidity);
 			setChanged(true);
 		}
-		if(this.wind != wind) {
+		if(getWind() != wind) {
 			super.setWind(wind);
 			setChanged(true);
 		}
